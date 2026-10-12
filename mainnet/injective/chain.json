@@ -51,7 +51,7 @@
     ],
     "rest": [
       {
-        "address": "https://lcd.injective.network",
+        "address": "https://sentry.lcd.injective.network",
         "provider": "Injective"
       }
     ]

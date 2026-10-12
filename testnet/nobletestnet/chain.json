@@ -40,14 +40,22 @@
   "apis": {
     "rpc": [
       {
-        "address": "https://rpc.testnet.noble.strange.love",
-        "provider": "Strangelove"
+        "address": "https://rpc.testnet.noble.xyz",
+        "provider": "Noble"
+      },
+      {
+        "address": "https://noble-testnet-rpc.polkachu.com",
+        "provider": "Polkachu"
       }
     ],
     "rest": [
       {
-        "address": "https://api.testnet.noble.strange.love",
-        "provider": "Strangelove"
+        "address": "https://api.testnet.noble.xyz",
+        "provider": "Noble"
+      },
+      {
+        "address": "https://noble-testnet-api.polkachu.com",
+        "provider": "Polkachu"
       }
     ]
   },

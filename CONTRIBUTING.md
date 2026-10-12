@@ -45,13 +45,45 @@ fields:
 | `logo_URIs`   | at least one of `png` or `svg`                                               |
 
 For **IBC‑bridged tokens** include a `traces` entry pointing at the source
-chain and channel; the linter verifies the channel is declared in `_IBC/`.
+chain and channel; the linter verifies the channel is declared in `_IBC/`
+(both ends of the same channel) and **re-derives the denom**: `base` must equal
+`"ibc/" + SHA-256(traces[-1].chain.path)` in upper-case hex, where the path is
+`transfer/<channel on this chain>/<counterparty base_denom>`. Check the result on
+chain before opening the PR:
+
+```bash
+curl -s "$REST/ibc/apps/transfer/v1/denom_traces/<HASH>"                 # path + base_denom
+curl -s "$REST/cosmos/bank/v1beta1/supply/by_denom?denom=ibc/<HASH>"      # non-zero supply
+```
+
+For **tokenfactory tokens** (`factory/<creator>/<subdenom>`) the creator must
+be a valid address of the chain, and `address`, when set, must be that creator.
+
+## Fees
+
+`fees.fee_tokens[]` prices must be ordered (`fixed_min_gas_price` ≤ `low` ≤
+`average` ≤ `high`) and never below the chain's minimum recorded in
+`scripts/fee-floors.json` (Safrochain mainnet: x/globalfee `0.05usaf`). Wallets
+build transactions from these numbers: a price below the floor is rejected by
+the network. Only change a floor with live evidence (`/gaia/globalfee/v1beta1/minimum_gas_prices`
+and `/cosmos/base/node/v1beta1/config` on the chain's REST endpoint).
+
+## Endpoints and explorers
+
+Only list endpoints that answer for the right `chain_id` (REST `node_info`, RPC
+`/status`, gRPC with a valid TLS certificate). Explorer `tx_page` must contain
+`${txHash}` and `account_page` `${accountAddress}`; open both with a real
+transaction and address before submitting.
 
 ## Adding an NFT collection
 
 Open `<network>/<chain>/nft-assetlist.json` and append to `assets[]`. For
 `cw721`/`cw2981`/`sg721` you MUST set `contract_address`. Place artwork under
-`images/nft/<collection_id>/{logo,banner,preview-N}.png`.
+`images/nft/<collection_id>/{logo,banner,preview-N}.png`. Every address
+(`contract_address`, `minter`, `creator.address`, `royalties.payment_address`)
+must be a real bech32 address of the chain, and every image hosted in this repo
+must exist: the linter fails otherwise. Never mark a collection `verified` or
+`featured` before it is deployed and checked on chain.
 
 ## Adding an IBC path
 

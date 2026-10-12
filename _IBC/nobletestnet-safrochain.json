@@ -2,13 +2,13 @@
   "$schema": "../schemas/ibc.schema.json",
   "chain_1": {
     "chain_name": "nobletestnet",
-    "client_id": "07-tendermint-0",
-    "connection_id": "connection-0"
+    "client_id": "07-tendermint-640",
+    "connection_id": "connection-584"
   },
   "chain_2": {
     "chain_name": "safrochain",
-    "client_id": "07-tendermint-0",
-    "connection_id": "connection-0"
+    "client_id": "07-tendermint-20",
+    "connection_id": "connection-12"
   },
   "channels": [
     {
@@ -17,7 +17,7 @@
       "ordering": "unordered",
       "version": "ics20-1",
       "tags": { "status": "live", "preferred": true },
-      "description": "Noble testnet ↔ Safrochain testnet (USDC corridor)."
+      "description": "Noble testnet ↔ Safrochain testnet (USDC corridor). Verified on-chain 2026-10-09 from both ends: grand-1 channel-890 / connection-584 / 07-tendermint-640 (tracks safro-testnet-1) ↔ safro-testnet-1 channel-12 / connection-12 / 07-tendermint-20 (tracks grand-1), both STATE_OPEN."
     }
   ]
 }

@@ -4,11 +4,11 @@
   "chain_id": "safrochain-1",
   "pretty_name": "Safrochain",
   "chain_type": "cosmos",
-  "status": "upcoming",
+  "status": "live",
   "network_type": "mainnet",
   "website": "https://safrochain.com",
   "bech32_prefix": "addr_safro",
-  "daemon_name": "safrod",
+  "daemon_name": "safrochaind",
   "node_home": "$HOME/.safrochain",
   "slip44": 118,
   "key_algos": [
@@ -18,10 +18,10 @@
     "fee_tokens": [
       {
         "denom": "usaf",
-        "fixed_min_gas_price": 0.0025,
-        "low_gas_price": 0.01,
-        "average_gas_price": 0.025,
-        "high_gas_price": 0.04
+        "fixed_min_gas_price": 0.05,
+        "low_gas_price": 0.05,
+        "average_gas_price": 0.075,
+        "high_gas_price": 0.1
       }
     ]
   },
@@ -40,41 +40,59 @@
       "version": "0.38"
     },
     "cosmwasm_enabled": true,
-    "cosmwasm_version": "0.53",
+    "cosmwasm_version": "0.54",
     "ibc_enabled": true
   },
   "apis": {
     "rpc": [
       {
-        "address": "https://rpc.safrochain.com",
+        "address": "https://rpc.safrochain.network",
+        "provider": "Safrochain Foundation"
+      },
+      {
+        "address": "https://rpc1.safrochain.network",
+        "provider": "Safrochain Foundation"
+      },
+      {
+        "address": "https://rpc2.safrochain.network",
         "provider": "Safrochain Foundation"
       }
     ],
     "rest": [
       {
-        "address": "https://rest.safrochain.com",
+        "address": "https://api.safrochain.network",
         "provider": "Safrochain Foundation"
-      }
-    ],
-    "grpc": [
+      },
       {
-        "address": "grpc.safrochain.com:443",
+        "address": "https://api1.safrochain.network",
+        "provider": "Safrochain Foundation"
+      },
+      {
+        "address": "https://api2.safrochain.network",
         "provider": "Safrochain Foundation"
       }
     ],
     "wss": [
       {
-        "address": "wss://rpc.safrochain.com/websocket",
+        "address": "wss://rpc.safrochain.network/websocket",
+        "provider": "Safrochain Foundation"
+      },
+      {
+        "address": "wss://rpc1.safrochain.network/websocket",
+        "provider": "Safrochain Foundation"
+      },
+      {
+        "address": "wss://rpc2.safrochain.network/websocket",
         "provider": "Safrochain Foundation"
       }
     ]
   },
   "explorers": [
     {
-      "kind": "safrimba",
-      "url": "https://safrimba.safrochain.com",
-      "tx_page": "https://safrimba.safrochain.com/safrochain/tx/${txHash}",
-      "account_page": "https://safrimba.safrochain.com/safrochain/account/${accountAddress}"
+      "kind": "valopers",
+      "url": "https://explorer.safrochain.network",
+      "tx_page": "https://explorer.safrochain.network/transactions/${txHash}",
+      "account_page": "https://explorer.safrochain.network/account/${accountAddress}"
     }
   ],
   "features": [
