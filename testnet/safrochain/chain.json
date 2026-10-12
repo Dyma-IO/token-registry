@@ -8,7 +8,7 @@
   "network_type": "testnet",
   "website": "https://testnet.safrochain.com",
   "bech32_prefix": "addr_safro",
-  "daemon_name": "safrod",
+  "daemon_name": "safrochaind",
   "node_home": "$HOME/.safrochain",
   "slip44": 118,
   "key_algos": [
@@ -40,7 +40,7 @@
       "version": "0.38"
     },
     "cosmwasm_enabled": true,
-    "cosmwasm_version": "0.53",
+    "cosmwasm_version": "0.54",
     "ibc_enabled": true
   },
   "apis": {
@@ -71,10 +71,10 @@
   },
   "explorers": [
     {
-      "kind": "safrimba",
+      "kind": "safroexplorer",
       "url": "https://explorer.testnet.safrochain.com",
-      "tx_page": "https://explorer.testnet.safrochain.com/safrochain/tx/${txHash}",
-      "account_page": "https://explorer.testnet.safrochain.com/safrochain/account/${accountAddress}"
+      "tx_page": "https://explorer.testnet.safrochain.com/tx/${txHash}",
+      "account_page": "https://explorer.testnet.safrochain.com/address/${accountAddress}"
     }
   ],
   "features": [

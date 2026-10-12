@@ -1,0 +1,76 @@
+{
+  "$schema": "../../schemas/chain.schema.json",
+  "chain_name": "injective",
+  "chain_id": "injective-1",
+  "pretty_name": "Injective",
+  "chain_type": "cosmos",
+  "status": "live",
+  "network_type": "mainnet",
+  "website": "https://injective.com",
+  "bech32_prefix": "inj",
+  "daemon_name": "injectived",
+  "node_home": "$HOME/.injectived",
+  "slip44": 60,
+  "key_algos": [
+    "secp256k1",
+    "ethsecp256k1"
+  ],
+  "fees": {
+    "fee_tokens": [
+      {
+        "denom": "inj",
+        "fixed_min_gas_price": 160000000,
+        "low_gas_price": 500000000,
+        "average_gas_price": 700000000,
+        "high_gas_price": 900000000
+      }
+    ]
+  },
+  "staking": {
+    "staking_tokens": [
+      {
+        "denom": "inj"
+      }
+    ]
+  },
+  "codebase": {
+    "git_repo": "https://github.com/InjectiveLabs/injective-core",
+    "cosmos_sdk_version": "0.50",
+    "consensus": {
+      "type": "cometbft",
+      "version": "0.38"
+    },
+    "ibc_enabled": true
+  },
+  "apis": {
+    "rpc": [
+      {
+        "address": "https://sentry.tm.injective.network:443",
+        "provider": "Injective"
+      }
+    ],
+    "rest": [
+      {
+        "address": "https://sentry.lcd.injective.network",
+        "provider": "Injective"
+      }
+    ]
+  },
+  "explorers": [
+    {
+      "kind": "mintscan",
+      "url": "https://www.mintscan.io/injective",
+      "tx_page": "https://www.mintscan.io/injective/tx/${txHash}",
+      "account_page": "https://www.mintscan.io/injective/address/${accountAddress}"
+    }
+  ],
+  "features": [
+    "stargate",
+    "ibc-transfer",
+    "ibc-go"
+  ],
+  "logo_URIs": {
+    "png": "https://raw.githubusercontent.com/cosmos/chain-registry/master/injective/images/inj.png",
+    "svg": "https://raw.githubusercontent.com/cosmos/chain-registry/master/injective/images/inj.svg"
+  }
+}

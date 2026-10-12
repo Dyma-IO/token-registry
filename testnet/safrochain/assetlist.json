@@ -57,10 +57,11 @@
     },
     {
       "type_asset": "ics20",
-      "description": "Noble USDC bridged to Safrochain Testnet via IBC channel-12 (testnet).",
+      "description": "Noble USDC bridged to Safrochain Testnet over IBC channel-12 (Noble testnet grand-1 channel-890).",
+      "extended_description": "Testnet USDC (uusdc) from Noble's testnet (grand-1) via the ICS-20 path grand-1 channel-890 ↔ safro-testnet-1 channel-12. IBC denom hash = sha256(\"transfer/channel-12/uusdc\"), verified on-chain 2026-10-09 (denom trace transfer/channel-12 + uusdc, supply 571.0015 USDC). 6 decimals.",
       "denom_units": [
         {
-          "denom": "ibc/498A0751C798A0D9A389AA3691123DADA57DAA4FE165D5C75894505B876BA6E4",
+          "denom": "ibc/2180E84E20F5679FCC760D8C165B60F42065DEF7F46A72B447CFF1B7DC6C0A65",
           "exponent": 0
         },
         {
@@ -68,7 +69,7 @@
           "exponent": 6
         }
       ],
-      "base": "ibc/498A0751C798A0D9A389AA3691123DADA57DAA4FE165D5C75894505B876BA6E4",
+      "base": "ibc/2180E84E20F5679FCC760D8C165B60F42065DEF7F46A72B447CFF1B7DC6C0A65",
       "name": "Noble USDC (Testnet)",
       "display": "usdc",
       "symbol": "USDC",

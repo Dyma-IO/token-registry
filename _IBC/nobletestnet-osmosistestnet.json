@@ -2,13 +2,13 @@
   "$schema": "../schemas/ibc.schema.json",
   "chain_1": {
     "chain_name": "nobletestnet",
-    "client_id": "07-tendermint-0",
-    "connection_id": "connection-0"
+    "client_id": "07-tendermint-641",
+    "connection_id": "connection-585"
   },
   "chain_2": {
     "chain_name": "osmosistestnet",
-    "client_id": "07-tendermint-0",
-    "connection_id": "connection-0"
+    "client_id": "07-tendermint-5084",
+    "connection_id": "connection-4437"
   },
   "channels": [
     {
@@ -17,7 +17,7 @@
       "ordering": "unordered",
       "version": "ics20-1",
       "tags": { "status": "live", "preferred": true },
-      "description": "Noble testnet ↔ Osmosis testnet."
+      "description": "Noble testnet ↔ Osmosis testnet. Verified on-chain 2026-10-09 from both ends: grand-1 channel-892 / connection-585 / 07-tendermint-641 (tracks osmo-test-5) ↔ osmo-test-5 channel-11518 / connection-4437 / 07-tendermint-5084 (tracks grand-1), both STATE_OPEN."
     }
   ]
 }

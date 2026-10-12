@@ -1,0 +1,17 @@
+{
+  "$comment": "Lowest gas price each chain accepts, per fee denom. scripts/lint.ts fails when a chain.json fee price (fixed_min, low, average, high) is below it. Only change a value with live evidence from the chain (node config and x/globalfee).",
+  "floors": {
+    "safrochain-1": {
+      "usaf": {
+        "min": 0.05,
+        "source": "x/globalfee GET https://api.safrochain.network/gaia/globalfee/v1beta1/minimum_gas_prices -> 0.05usaf; node GET /cosmos/base/node/v1beta1/config -> minimum_gas_price 0.05usaf (2026-10-09)"
+      }
+    },
+    "safro-testnet-1": {
+      "usaf": {
+        "min": 0.001,
+        "source": "x/globalfee GET https://rest.testnet.safrochain.com/gaia/globalfee/v1beta1/minimum_gas_prices -> []; node GET /cosmos/base/node/v1beta1/config -> minimum_gas_price 0.001usaf (2026-10-09)"
+      }
+    }
+  }
+}

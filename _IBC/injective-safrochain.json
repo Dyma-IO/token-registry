@@ -1,0 +1,32 @@
+{
+  "$schema": "../schemas/ibc.schema.json",
+  "chain_1": {
+    "chain_name": "injective",
+    "client_id": "07-tendermint-354",
+    "connection_id": "connection-354"
+  },
+  "chain_2": {
+    "chain_name": "safrochain",
+    "client_id": "07-tendermint-2",
+    "connection_id": "connection-2"
+  },
+  "channels": [
+    {
+      "chain_1": {
+        "channel_id": "channel-495",
+        "port_id": "transfer"
+      },
+      "chain_2": {
+        "channel_id": "channel-2",
+        "port_id": "transfer"
+      },
+      "ordering": "unordered",
+      "version": "ics20-1",
+      "tags": {
+        "status": "live",
+        "preferred": true
+      },
+      "description": "Injective mainnet ↔ Safrochain mainnet. Circle USDC (native ERC20 on Injective) and INJ over ICS-20. Verified on-chain 2026-09-23 (clients injective-1 / safrochain-1)."
+    }
+  ]
+}

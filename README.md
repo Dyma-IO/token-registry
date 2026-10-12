@@ -37,7 +37,10 @@ token-registry/
 ├── scripts/                       Tooling
 │   ├── validate.ts                Validate every file against its schema
 │   ├── build-index.ts             Produce `dist/registry.json` for consumers
-│   └── lint.ts                    Cross‑file consistency checks
+│   ├── lint.ts                    Cross‑file consistency checks (IBC denom hashes,
+│   │                              channel pairs, fee floors, explorer templates,
+│   │                              bech32 addresses, repo-hosted images)
+│   └── fee-floors.json            Per-chain minimum gas prices, verified on chain
 ├── dist/                          Generated (gitignored except for `dist/.gitkeep`)
 └── .github/workflows/validate.yml CI validation on every PR
 ```
@@ -53,7 +56,9 @@ Each chain folder is keyed by **`chain_name`** (lowercase, no spaces — e.g. `s
 # from token-registry/
 pnpm install              # installs ajv + tsx
 pnpm validate             # validates every chain/asset/nft/ibc file vs schema
-pnpm lint                 # cross-file consistency checks (denoms, channels…)
+pnpm lint                 # cross-file consistency checks: ibc/<hash> = sha256(trace path),
+                          # channel pairs, fee prices >= chain floor, explorer templates,
+                          # bech32 addresses, images present
 pnpm build                # writes dist/registry.json
 ```
 

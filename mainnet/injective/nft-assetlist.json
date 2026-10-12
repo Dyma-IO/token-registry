@@ -1,0 +1,5 @@
+{
+  "$schema": "../../schemas/nft-assetlist.schema.json",
+  "chain_name": "injective",
+  "assets": []
+}

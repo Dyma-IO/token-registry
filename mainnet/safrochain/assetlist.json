@@ -199,6 +199,77 @@
     },
     {
       "type_asset": "ics20",
+      "description": "Circle USDC (native on Injective) bridged to Safrochain over IBC channel-2.",
+      "extended_description": "Native Circle USDC on Injective (ERC20 0xa00C59fF5a080D2b954d0c75e46E22a0c371235a) transferred to Safrochain via Injective channel-495 ↔ Safrochain channel-2. Preferred stablecoin path as Noble USDC migrates to Injective issuance. Distinct IBC denom from Noble USDC (channel-0).",
+      "denom_units": [
+        {
+          "denom": "ibc/1E180C085A3A2688CDF2A781E5990BE8AA92CE69CB62A8CC6BB9F5EE17DD5C38",
+          "exponent": 0
+        },
+        {
+          "denom": "usdc.inj",
+          "exponent": 6,
+          "aliases": [
+            "USDC (Injective)"
+          ]
+        }
+      ],
+      "base": "ibc/1E180C085A3A2688CDF2A781E5990BE8AA92CE69CB62A8CC6BB9F5EE17DD5C38",
+      "name": "USD Coin (Injective)",
+      "display": "usdc.inj",
+      "symbol": "USDC",
+      "coingecko_id": "usd-coin",
+      "logo_URIs": {
+        "png": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/safrochain/images/usdc.png",
+        "svg": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/safrochain/images/usdc.svg"
+      },
+      "images": [
+        {
+          "png": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/safrochain/images/usdc.png",
+          "svg": "https://raw.githubusercontent.com/Safrochain-Org/token-registry/main/mainnet/safrochain/images/usdc.svg",
+          "theme": {
+            "primary_color_hex": "#2775CA",
+            "circle": true
+          }
+        }
+      ],
+      "traces": [
+        {
+          "type": "ibc",
+          "counterparty": {
+            "chain_name": "injective",
+            "base_denom": "erc20:0xa00C59fF5a080D2b954d0c75e46E22a0c371235a",
+            "channel_id": "channel-495",
+            "port": "transfer"
+          },
+          "chain": {
+            "channel_id": "channel-2",
+            "port": "transfer",
+            "path": "transfer/channel-2/erc20:0xa00C59fF5a080D2b954d0c75e46E22a0c371235a"
+          }
+        }
+      ],
+      "keywords": [
+        "stablecoin",
+        "bridged",
+        "circle",
+        "injective"
+      ],
+      "safrimba": {
+        "listed": true,
+        "verified": true,
+        "tradeable_on": [
+          "audoswap"
+        ],
+        "tags": [
+          "stablecoin",
+          "wrapped"
+        ],
+        "risk": "low"
+      }
+    },
+    {
+      "type_asset": "ics20",
       "description": "Osmosis OSMO bridged to Safrochain over IBC channel-1.",
       "extended_description": "Native Osmosis OSMO (uosmo) transferred to Safrochain mainnet via the live Osmosis ↔ Safrochain ICS-20 path (Osmosis channel-110497 ↔ Safrochain channel-1). IBC denom hash verified on-chain.",
       "denom_units": [
